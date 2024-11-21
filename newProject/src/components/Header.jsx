@@ -5,7 +5,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
  function Header () {
     const nowDay = new Date()
-    const datInfo =nowDay.toUTCString()
+ 
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const months = [
+    'January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'
+    ];
+    const dayOfWeek = days[nowDay.getDay()];
+    const month = months[nowDay.getMonth()];
+    const day = nowDay.getDate();
+
+    const formattedDate = `${dayOfWeek}  ${month}  ${day}`;
     const userStyle={
         position: 'absolute',
         top: '3.75rem',
@@ -24,7 +34,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
             </p>
             <div className="date inter-500">
                 <p className="dateText">
-                   {datInfo}
+                   {formattedDate}
                 </p>
             </div>
         </div>

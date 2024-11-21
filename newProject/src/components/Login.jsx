@@ -7,14 +7,6 @@ function Login(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const btnStyle = {
-    width: '11.87rem',
-    padding: '0.93rem',
-    backgroundColor: 'rgba(255, 255, 255, 0.50)',
-    color: 'white',
-    textAlign: 'center',
-    position: 'absolute',
-    top: '5.75rem',
-    right: '9.5rem',
     display: username === 'Username' && password === '0000' ? 'none' : 'block',
   };
   const userStyle = {
@@ -22,14 +14,6 @@ function Login(props) {
   };
   const modalStyle = {
     display: isModalOpen ? 'block' : 'none',
-    position: 'fixed',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    backgroundColor: 'white',
-    padding: '1.25rem',
-    boxShadow: '0 0.25rem 0.5rem rgba(0, 0, 0, 0.2)',
-    zIndex: 1000,
   };
   const overlayStyle = {
     display: isModalOpen ? 'block' : 'none',
@@ -61,7 +45,7 @@ function Login(props) {
       {isModalOpen && (
         <div>
           <div style={overlayStyle} onClick={handleCloseModal}></div>
-          <div style={modalStyle}>
+          <div id='modalWind' style={modalStyle}>
             <h2>Login</h2>
             <input
               type="text"
